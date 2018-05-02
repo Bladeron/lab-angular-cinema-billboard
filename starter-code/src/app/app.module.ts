@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MyHomeComponentComponent } from './my-home-component/my-home-component.component';
@@ -14,6 +14,8 @@ const routes: Routes = [
   { path: 'movie/:id', component: MyMovieComponentComponent }
 ];
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
